@@ -6,7 +6,7 @@ public class PinFallDetection : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        PinFallBox.SetActive(true);
+       // PinFallBox.SetActive(true);
     }
 
     // Update is called once per frame
@@ -23,10 +23,15 @@ public class PinFallDetection : MonoBehaviour
 
             if (!BowlingPinBehaviour.Hit)
             {
+                // if (!BowlingPinBehaviour.HitCounted)
+                // {
                 BowlingController.PinsHit = BowlingController.PinsHit + 1;
                 Debug.Log(BowlingController.PinsHit);
+                this.gameObject.SetActive(false);
                 BowlingPinBehaviour.Hit = true;
-                PinFallBox.SetActive(false);
+               
+                //}
+                   
 
             }
             
