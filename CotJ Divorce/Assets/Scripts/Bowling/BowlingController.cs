@@ -28,8 +28,8 @@ public class BowlingController : MonoBehaviour
         StartingPins = 10;
         PinsHit = 0;
 
-        JaqPos = JaqAnimator.transform.position;
-        JayPos = JayAnimator.transform.position;
+        //JaqPos = JaqAnimator.transform.position;
+        //JayPos = JayAnimator.transform.position;
 
     }
 
@@ -51,14 +51,14 @@ public class BowlingController : MonoBehaviour
     public void PauseAnimators()
     {
 
-        JaqAnimator.speed = 0;
-        JayAnimator.speed = 0;
+        //JaqAnimator.speed = 0;
+        //JayAnimator.speed = 0;
 
-        JaqAnimator.transform.position = new Vector3(10000, 10000, 10000);
-        JayAnimator.transform.position = new Vector3(10000, 10000, 10000);
+        //JaqAnimator.transform.position = new Vector3(10000, 10000, 10000);
+        //JayAnimator.transform.position = new Vector3(10000, 10000, 10000);
 
-        Instantiate(shockedJaq, JaqPos, Quaternion.identity);
-        Instantiate(shockedJay, JayPos, Quaternion.identity);
+        //Instantiate(shockedJaq, JaqPos, Quaternion.identity);
+        //Instantiate(shockedJay, JayPos, Quaternion.identity);
 
     }
 
