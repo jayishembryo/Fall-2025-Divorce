@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BowlingPinBehaviour : MonoBehaviour
@@ -7,12 +8,17 @@ public class BowlingPinBehaviour : MonoBehaviour
     public static bool Hit;
     public bool HitCounted;
 
+    [SerializeField] List<AudioClip> birdSounds = new List<AudioClip>();
+
+    [SerializeField] AudioSource glassSource;
+    [SerializeField] AudioSource playerSource;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       // bc = GameObject.Find("BowlingController").GetComponent<BowlingController>();
-      //  bbb = GameObject.Find("BowlingBallBehaviour").GetComponent<BowlingBallBehaviour>();
+        // bc = GameObject.Find("BowlingController").GetComponent<BowlingController>();
+        //  bbb = GameObject.Find("BowlingBallBehaviour").GetComponent<BowlingBallBehaviour>();
         Hit = false;
         HitCounted = false;
     }
@@ -27,10 +33,16 @@ public class BowlingPinBehaviour : MonoBehaviour
                 BowlingController.PinsHit = BowlingController.PinsHit + 1;
                 Debug.Log(BowlingController.PinsHit);
                 HitCounted = true;
+
+                glassSource.Play();
+
+                int randomClip = Random.Range(0, birdSounds.Count);
+                playerSource.clip = birdSounds[randomClip];
+                playerSource.Play();
             }
-            
+
         }
-        
+
     }
     private void OnTriggerEnter(Collider collision)
     {
@@ -41,15 +53,15 @@ public class BowlingPinBehaviour : MonoBehaviour
             /*BowlingController.PinsHit = BowlingController.PinsHit + 1;
             Debug.Log(BowlingController.PinsHit);
             Hit = true;*/
+
             if (BowlingBallBehaviour.IsBallOut)
             {
-                 Destroy(this.gameObject);
+                Destroy(this.gameObject);
             }
-            
-        }
-        
 
         }
 
     }
+
+}
 

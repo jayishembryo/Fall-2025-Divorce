@@ -20,6 +20,7 @@ public class PinFallDetection : MonoBehaviour
 
         if (collision.gameObject.tag == "Floor")
         {
+
             if (!BowlingPinBehaviour.Hit)
             {
                 BowlingController.PinsHit = BowlingController.PinsHit + 1;

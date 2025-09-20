@@ -138,10 +138,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1829354373374454468}
-  - component: {fileID: -4270208460782013887}
+  - component: {fileID: 8832582557275233700}
   - component: {fileID: 5369088558233621806}
   m_Layer: 0
-  m_Name: Bird Player
+  m_Name: Bird Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ Transform:
   - {fileID: 793207723551198344}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4270208460782013887
+--- !u!114 &8832582557275233700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,10 +173,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2728873228038796763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b6d72f6f3b839f4d862e1a629281328, type: 3}
+  m_Script: {fileID: 11500000, guid: 8af23103f4dd0eb4ca6580340293ed71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdSounds: []
+  birdSounds:
+  - {fileID: 8300000, guid: a344c147e04a9504a93e1062db790e71, type: 3}
+  - {fileID: 8300000, guid: e3b54771ba23baa4d958a39cf680830c, type: 3}
+  - {fileID: 8300000, guid: e972c30178ca15c43bab74c688f05fb6, type: 3}
+  - {fileID: 8300000, guid: bae4fe30438dad842a3c295d2a864ea5, type: 3}
+  - {fileID: 8300000, guid: e91a9e0223180fc49beb2298dbaa0c33, type: 3}
   glassSource: {fileID: 645187206798311485}
   playerSource: {fileID: 7181311390777604459}
 --- !u!114 &5369088558233621806
