@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GubGubImage: {fileID: 8021980903833050962, guid: 4d940873419fdc84298377772b54e27d, type: 3}
-  SecondsToWait: 1
+  SecondsToWaitSmall: 15
+  SecondsToWaitBig: 30
   BowlingOccurred: 1
   speed: 5

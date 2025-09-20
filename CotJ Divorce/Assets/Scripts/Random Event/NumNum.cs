@@ -4,10 +4,10 @@ using UnityEngine;
 public class NumNum : MonoBehaviour
 {
     public GameObject NumNumImage;
-    public float SecondsToWait;
+    public float SecondsToWaitSmall;
+    public float SecondsToWaitBig;
     public bool BowlingOccurred;
     private Coroutine SpawningCoroutine;
-    private Rigidbody rb;
     public float speed = 5;
 
     private void Update()
@@ -25,7 +25,7 @@ public class NumNum : MonoBehaviour
     {
         while (BowlingOccurred)
         {
-            yield return new WaitForSeconds(SecondsToWait);
+            yield return new WaitForSeconds(Random.Range(SecondsToWaitSmall, SecondsToWaitBig));
             GameObject instantiatedObject = Instantiate(NumNumImage, transform.position, Quaternion.identity);
             instantiatedObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(speed, 0, 0);
 

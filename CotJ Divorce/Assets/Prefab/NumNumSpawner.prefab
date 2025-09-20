@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumNumImage: {fileID: 2928198437532919606, guid: cc0a28825d6555d4bac8a56c4f54d675, type: 3}
-  SecondsToWait: 1
+  SecondsToWaitSmall: 15
+  SecondsToWaitBig: 30
   BowlingOccurred: 1
   speed: 5
