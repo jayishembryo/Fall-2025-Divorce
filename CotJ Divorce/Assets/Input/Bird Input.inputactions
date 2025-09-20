@@ -1,0 +1,34 @@
+{
+    "name": "Bird Input",
+    "maps": [
+        {
+            "name": "Bird",
+            "id": "dd729872-e22d-4282-8977-95197f1c32ee",
+            "actions": [
+                {
+                    "name": "HitWIndow",
+                    "type": "Button",
+                    "id": "29e3bb86-64ff-48b1-adc5-bf38c3bb79c9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9a44da7f-4de5-4816-b007-0a2b513554a9",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HitWIndow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
