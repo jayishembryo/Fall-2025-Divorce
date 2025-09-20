@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class Credits : MonoBehaviour
 {
-    
-    void RunRealCredits()
+
+    //shitty ass variable name
+    [SerializeField] GameObject realCreditsSequenceStart;
+
+    public void RunRealCredits()
     {
 
-
+        realCreditsSequenceStart.SetActive(true);
+        this.gameObject.SetActive(false);
 
     }
 
-    void ExitCredits()
+    public void ExitCredits()
     {
 
         this.gameObject.SetActive(false);
