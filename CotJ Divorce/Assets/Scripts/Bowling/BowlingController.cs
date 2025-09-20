@@ -17,6 +17,9 @@ public class BowlingController : MonoBehaviour
     public Vector3 JaqPos;
     public Vector3 JayPos;
 
+    [SerializeField] GameObject shockedJaq;
+    [SerializeField] GameObject shockedJay;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -53,6 +56,9 @@ public class BowlingController : MonoBehaviour
 
         JaqAnimator.transform.position = new Vector3(10000, 10000, 10000);
         JayAnimator.transform.position = new Vector3(10000, 10000, 10000);
+
+        Instantiate(shockedJaq, JaqPos, Quaternion.identity);
+        Instantiate(shockedJay, JayPos, Quaternion.identity);
 
     }
 
