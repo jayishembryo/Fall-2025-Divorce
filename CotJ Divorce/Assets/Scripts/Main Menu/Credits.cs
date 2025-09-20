@@ -10,6 +10,7 @@ public class Credits : MonoBehaviour
     {
 
         realCreditsSequenceStart.SetActive(true);
+        this.gameObject.SetActive(false);
 
     }
 
