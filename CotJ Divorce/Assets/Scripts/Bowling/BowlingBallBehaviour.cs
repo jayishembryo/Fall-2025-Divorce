@@ -9,6 +9,7 @@ public class BowlingBallBehaviour : MonoBehaviour
     public GameObject BowlingBall;
 
     public bool IsBallThrown;
+    public bool IsBallOut;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,7 +42,32 @@ public class BowlingBallBehaviour : MonoBehaviour
         }
         else
         {
-            Debug.Log("GUTTTTTER");
+           // Debug.Log("GUTTTTTER");
+        }
+
+        
+    }
+
+    public void BowlAgain()
+    {
+        if (IsBallOut)
+        {
+
         }
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        //getting rid of a life, playing a sound, and deleting an enemy when it hits the finish
+        // line or player 
+        if (collision.gameObject.tag == "EndOfTheLine")
+        {
+            IsBallOut = true;
+            Destroy(this.gameObject);
+        }
+
+
+    }
+
 }
+

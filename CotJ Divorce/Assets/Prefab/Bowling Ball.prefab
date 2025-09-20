@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5082143847661358568}
   m_Layer: 0
   m_Name: Bowling Ball
-  m_TagString: Untagged
+  m_TagString: ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
