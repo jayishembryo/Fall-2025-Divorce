@@ -310,8 +310,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.11931886, y: 0.44563204, z: 0.40373224}
-  m_Center: {x: 0.002995573, y: -0.122816026, z: -0.13234738}
+  m_Size: {x: 0.11931886, y: 0.43043587, z: 0.40373224}
+  m_Center: {x: 0.002995573, y: -0.11521794, z: -0.13234738}
 --- !u!114 &6481273026549878617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PinFallBox: {fileID: 7442229131615225062}
+  bp: {fileID: 1127450457985238688}
 --- !u!1001 &2547897376817875379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -441,7 +442,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3430224472537052386}
   serializedVersion: 4
-  m_Mass: 0.5
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -493,6 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187ee488baba3f04198e6cfe84912d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hit: 0
   HitCounted: 0
   birdSounds:
   - {fileID: 8300000, guid: a344c147e04a9504a93e1062db790e71, type: 3}
@@ -519,7 +521,7 @@ BoxCollider:
   m_LayerOverridePriority: 1
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.05939251, y: 0.07769304, z: 0.088727824}
   m_Center: {x: -0.0008012533, y: 0.036282107, z: -0.005636123}
