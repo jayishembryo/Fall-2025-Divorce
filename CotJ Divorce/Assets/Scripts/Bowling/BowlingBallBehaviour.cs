@@ -2,20 +2,23 @@ using UnityEngine;
 
 public class BowlingBallBehaviour : MonoBehaviour
 {
+    private BowlingPinBehaviour bp;
 
     public Rigidbody rb;
     public float speed = 1;
 
-    public GameObject BowlingBall;
+  
 
     public bool IsBallThrown;
-    public bool IsBallOut;
+    public static bool IsBallOut;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+      //  bp = GameObject.Find("BowlingPinBehaviour").GetComponent<BowlingPinBehaviour>();
         IsBallThrown = false;
+        IsBallOut = false;
     }
 
     // Update is called once per frame
@@ -50,16 +53,15 @@ public class BowlingBallBehaviour : MonoBehaviour
 
     public void BowlAgain()
     {
-        if (IsBallOut)
+        /*if (IsBallOut)
         {
 
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        //getting rid of a life, playing a sound, and deleting an enemy when it hits the finish
-        // line or player 
+       
         if (collision.gameObject.tag == "EndOfTheLine")
         {
             IsBallOut = true;
