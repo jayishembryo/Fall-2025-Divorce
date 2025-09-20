@@ -5,8 +5,8 @@ public class BowlingPinBehaviour : MonoBehaviour
 {
     private BowlingController bc;
     private BowlingBallBehaviour bbb;
-    public static bool Hit;
-    public static bool HitCounted;
+    public bool Hit;
+    public bool HitCounted;
 
     [SerializeField] List<AudioClip> birdSounds = new List<AudioClip>();
 

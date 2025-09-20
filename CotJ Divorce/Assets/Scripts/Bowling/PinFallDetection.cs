@@ -3,10 +3,12 @@ using UnityEngine;
 public class PinFallDetection : MonoBehaviour
 {
     public GameObject PinFallBox;
+    public BowlingPinBehaviour bp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       // PinFallBox.SetActive(true);
+        // PinFallBox.SetActive(true);
+        bp = GameObject.Find("BowlingPinBehaviour").GetComponent<BowlingPinBehaviour>();
     }
 
     // Update is called once per frame
@@ -21,16 +23,15 @@ public class PinFallDetection : MonoBehaviour
         if (collision.gameObject.tag == "Floor")
         {
 
-            if (!BowlingPinBehaviour.Hit)
+            if (!bp.Hit)
             {
-                // if (!BowlingPinBehaviour.HitCounted)
-                // {
-                BowlingController.PinsHit = BowlingController.PinsHit + 1;
-                Debug.Log(BowlingController.PinsHit);
+                
+                //BowlingController.PinsHit = BowlingController.PinsHit + 1;
+                //Debug.Log(BowlingController.PinsHit);
                 this.gameObject.SetActive(false);
-                BowlingPinBehaviour.Hit = true;
+                bp.Hit = true;
                
-                //}
+               
                    
 
             }
