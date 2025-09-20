@@ -14,7 +14,7 @@ public class BowlingController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        bbb = GameObject.Find("BowlingBallBehaviour").GetComponent<BowlingBallBehaviour>();
+        //bbb = GameObject.Find("BowlingBallBehaviour").GetComponent<BowlingBallBehaviour>();
 
         StartingPins = 10;
         PinsHit = 0;

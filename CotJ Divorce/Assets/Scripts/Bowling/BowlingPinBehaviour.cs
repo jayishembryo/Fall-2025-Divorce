@@ -3,15 +3,33 @@ using UnityEngine;
 public class BowlingPinBehaviour : MonoBehaviour
 {
     private BowlingController bc;
+    private BowlingBallBehaviour bbb;
+    public static bool Hit;
+    public bool HitCounted;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        bc = GameObject.Find("BowlingController").GetComponent<BowlingController>();
+       // bc = GameObject.Find("BowlingController").GetComponent<BowlingController>();
+      //  bbb = GameObject.Find("BowlingBallBehaviour").GetComponent<BowlingBallBehaviour>();
+        Hit = false;
+        HitCounted = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Hit)
+        {
+            if (!HitCounted)
+            {
+                BowlingController.PinsHit = BowlingController.PinsHit + 1;
+                Debug.Log(BowlingController.PinsHit);
+                HitCounted = true;
+            }
+            
+        }
         
     }
     private void OnTriggerEnter(Collider collision)
@@ -20,9 +38,14 @@ public class BowlingPinBehaviour : MonoBehaviour
         // line or player 
         if (collision.gameObject.tag == "ball")
         {
-            BowlingController.PinsHit = BowlingController.PinsHit + 1;
+            /*BowlingController.PinsHit = BowlingController.PinsHit + 1;
             Debug.Log(BowlingController.PinsHit);
-            Destroy(this.gameObject);
+            Hit = true;*/
+            if (BowlingBallBehaviour.IsBallOut)
+            {
+                 Destroy(this.gameObject);
+            }
+            
         }
         
 
