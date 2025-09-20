@@ -5,7 +5,7 @@ public class BowlingPinBehaviour : MonoBehaviour
 {
     private BowlingController bc;
     private BowlingBallBehaviour bbb;
-    public static bool Hit;
+    public bool Hit;
     public bool HitCounted;
 
     [SerializeField] List<AudioClip> birdSounds = new List<AudioClip>();
@@ -32,13 +32,15 @@ public class BowlingPinBehaviour : MonoBehaviour
             {
                 BowlingController.PinsHit = BowlingController.PinsHit + 1;
                 Debug.Log(BowlingController.PinsHit);
-                HitCounted = true;
+             
 
                 glassSource.Play();
 
                 int randomClip = Random.Range(0, birdSounds.Count);
                 playerSource.clip = birdSounds[randomClip];
                 playerSource.Play();
+
+                HitCounted = true;
             }
 
         }
@@ -54,10 +56,10 @@ public class BowlingPinBehaviour : MonoBehaviour
             Debug.Log(BowlingController.PinsHit);
             Hit = true;*/
 
-            if (BowlingBallBehaviour.IsBallOut)
+           /* if (BowlingBallBehaviour.IsBallOut)
             {
                 Destroy(this.gameObject);
-            }
+            }*/
 
         }
 
