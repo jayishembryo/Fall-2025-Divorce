@@ -40,6 +40,8 @@ public class BowlingPinBehaviour : MonoBehaviour
                 playerSource.clip = birdSounds[randomClip];
                 playerSource.Play();
 
+                FindFirstObjectByType<BowlingController>().PauseAnimators();
+
                 HitCounted = true;
             }
 
