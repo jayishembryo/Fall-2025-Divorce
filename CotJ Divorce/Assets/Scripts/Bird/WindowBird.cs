@@ -9,14 +9,12 @@ public class WindowBird : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        if(!SceneManager.GetActiveScene().name.Contains("THREE"))
+        if(SceneManager.GetActiveScene().name.Contains("THREE"))
         {
 
-            return;
+            GameObject.Find("Fight Source").GetComponent<AudioSource>().Pause();
 
         }
-
-        GameObject.Find("Fight Source").GetComponent<AudioSource>().Pause();
 
         Debug.Log("bird");
         AS.PlayOneShot(AC);
@@ -30,6 +28,13 @@ public class WindowBird : MonoBehaviour
 
         gameObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, -40, 0);
 
-        FindFirstObjectByType<BowlingController>().PauseAnimators();
+        //THIS SHIT IS SO ASS
+        if (SceneManager.GetActiveScene().name.Contains("THREE"))
+        {
+
+            FindFirstObjectByType<BowlingController>().PauseAnimators();
+
+        }
+
     }
 }
