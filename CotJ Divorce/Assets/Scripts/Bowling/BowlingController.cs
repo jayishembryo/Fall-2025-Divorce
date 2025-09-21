@@ -23,50 +23,10 @@ public class BowlingController : MonoBehaviour
 
     public bool IsTurn2;
     public bool IsStartOfFrame;
+    public bool IsEndOfFrame;
+    public bool NeedNewBall;
 
-    public float BallXValue = 0f;
-    public float BallYValue = 0f;
-    public float BallZValue = 0f;
-
-    public float Pin1XValue = 0f;
-    public float Pin1YValue = 0f;
-    public float Pin1ZValue = 0f;
-
-    public float Pin2XValue = 0f;
-    public float Pin2YValue = 0f;
-    public float Pin2ZValue = 0f;
-
-    public float Pin3XValue = 0f;
-    public float Pin3YValue = 0f;
-    public float Pin3ZValue = 0f;
-
-    public float Pin4XValue = 0f;
-    public float Pin4YValue = 0f;
-    public float Pin4ZValue = 0f;
-
-    public float Pin5XValue = 0f;
-    public float Pin5YValue = 0f;
-    public float Pin5ZValue = 0f;
-
-    public float Pin6XValue = 0f;
-    public float Pin6YValue = 0f;
-    public float Pin6ZValue = 0f;
-
-    public float Pin7XValue = 0f;
-    public float Pin7YValue = 0f;
-    public float Pin7ZValue = 0f;
-
-    public float Pin8XValue = 0f;
-    public float Pin8YValue = 0f;
-    public float Pin8ZValue = 0f;
-
-    public float Pin9XValue = 0f;
-    public float Pin9YValue = 0f;
-    public float Pin9ZValue = 0f;
-
-    public float Pin10XValue = 0f;
-    public float Pin10YValue = 0f;
-    public float Pin10ZValue = 0f;
+   
 
     public GameObject Pin1Location;
     public GameObject Pin2Location;
@@ -79,12 +39,19 @@ public class BowlingController : MonoBehaviour
     public GameObject Pin9Location;
     public GameObject Pin10Location;
 
+    public GameObject BallLocation;
+
+
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Instantiate(ball, BallLocation.transform.position, Quaternion.identity);
+
+        //bbb is setting the varible, FindFirstObjectByType is looking for an object with bowling ball behaviour on it in the scene, in <> is what it's looking for
+       bbb = FindFirstObjectByType<BowlingBallBehaviour>();
         //bbb = GameObject.Find("BowlingBallBehaviour").GetComponent<BowlingBallBehaviour>();
 
         StartingPins = 10;
@@ -104,11 +71,20 @@ public class BowlingController : MonoBehaviour
             StartOfFrame();
         }
 
-        //&& bbb.IsBallOut
-        if (IsTurn2)
+        if (NeedNewBall)
         {
-            IsStartOfFrame = true;
+            Instantiate(ball, BallLocation.transform.position, Quaternion.identity);
+            NeedNewBall = false;
         }
+
+
+        //&& bbb.IsBallOut
+       /* if (bbb.IsBallOut)
+        {
+            Instantiate(ball, BallLocation.transform.position, Quaternion.identity);
+            IsTurn2 = false;
+            IsStartOfFrame = true;
+        }*/
     }
 
     public void BowlAgain()
@@ -136,9 +112,15 @@ public class BowlingController : MonoBehaviour
 
     public void StartOfFrame()
     {
-        Instantiate(ball, new Vector3(BallXValue, BallYValue, BallZValue), Quaternion.identity);
+        if (NeedNewBall)
+        {
+            Instantiate(ball, BallLocation.transform.position, Quaternion.identity);
+            NeedNewBall = false;
+        }
         
-        IsTurn2 = false;
+        
+        //IsTurn2 = false;
+
 
         Instantiate(pin, Pin1Location.transform.position, Quaternion.identity);
         Instantiate(pin, Pin2Location.transform.position, Quaternion.identity);

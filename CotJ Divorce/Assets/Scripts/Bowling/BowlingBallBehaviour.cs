@@ -18,7 +18,8 @@ public class BowlingBallBehaviour : MonoBehaviour
     void Start()
     {
         //  bp = GameObject.Find("BowlingPinBehaviour").GetComponent<BowlingPinBehaviour>();
-        bc = GameObject.Find("BowlingController").GetComponent<BowlingController>();
+        //bc = GameObject.Find("BowlingController").GetComponent<BowlingController>();
+        bc = FindFirstObjectByType<BowlingController>();
         IsBallThrown = false;
         IsBallOut = false;
     }
@@ -73,7 +74,17 @@ public class BowlingBallBehaviour : MonoBehaviour
        
         if (collision.gameObject.tag == "EndOfTheLine")
         {
+
             IsBallOut = true;
+            Debug.Log("is ball out");
+            bc.NeedNewBall = true;
+            Debug.Log("Need new ball");
+            /*if (!bc.IsTurn2)
+            {
+                bc.IsTurn2 = true;
+                Debug.Log("IsTurn2 " + bc.IsTurn2);
+            }*/
+            Debug.Log("Ball Deleted");
             Destroy(this.gameObject);
         }
 
