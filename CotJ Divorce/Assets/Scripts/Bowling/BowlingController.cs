@@ -6,9 +6,10 @@ public class BowlingController : MonoBehaviour
 
     public static int StartingPins = 10;
     public static int PinsHit = 0;
+    public Vector3 BallStartRotation; 
 
     private BowlingBallBehaviour bbb;
-    public GameObject ballClone;
+    //public GameObject ballClone;
     public GameObject ball;
     public GameObject pin;
 
@@ -48,7 +49,9 @@ public class BowlingController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Instantiate(ball, BallLocation.transform.position, Quaternion.identity);
+        // Instantiate is spawnign in a game object, ball is the game object, BallLocation is where it's spawning, and transform.position is giving it the x,y,z of where it should be from the location
+        // Quaternion is the rotation of the object, Euler sets a spepcific predetermined rotation, it needs a vector 3 to tell it where to go, since you don't have one you need to make on, that is the value of the rotation you want to set
+       Instantiate(ball, BallLocation.transform.position, Quaternion.Euler (BallStartRotation));
 
         //bbb is setting the varible, FindFirstObjectByType is looking for an object with bowling ball behaviour on it in the scene, in <> is what it's looking for
        bbb = FindFirstObjectByType<BowlingBallBehaviour>();
@@ -73,7 +76,7 @@ public class BowlingController : MonoBehaviour
 
         if (NeedNewBall)
         {
-            Instantiate(ball, BallLocation.transform.position, Quaternion.identity);
+            Instantiate(ball, BallLocation.transform.position, Quaternion.Euler(BallStartRotation));
             NeedNewBall = false;
             if (IsTurn2)
             {
