@@ -9,6 +9,13 @@ public class NumNum : MonoBehaviour
     public bool BowlingOccurred;
     private Coroutine SpawningCoroutine;
     public float speed = 5;
+    public AudioClip NumNumVoiceLine;
+    private AudioSource AS;
+
+    private void Start()
+    {
+        AS = gameObject.GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -28,6 +35,9 @@ public class NumNum : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(SecondsToWaitSmall, SecondsToWaitBig));
             GameObject instantiatedObject = Instantiate(NumNumImage, transform.position, Quaternion.identity);
             instantiatedObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(speed, 0, 0);
+
+            yield return new WaitForSeconds(.1f);
+            AS.PlayOneShot(NumNumVoiceLine);
 
         }
     }

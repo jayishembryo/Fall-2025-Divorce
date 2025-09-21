@@ -49,3 +49,4 @@ MonoBehaviour:
   SecondsToWaitBig: 30
   BowlingOccurred: 1
   speed: 5
+  NumNumVoiceLine: {fileID: 8300000, guid: 62b61983f21cf554da60dd81b2f61801, type: 3}
