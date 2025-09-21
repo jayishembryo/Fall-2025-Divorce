@@ -11,6 +11,7 @@ public class VideoEnd : MonoBehaviour
     public string NextScene;
     private BowlingController BC;
     public MeshRenderer MR;
+    public AudioSource AS;
     private void Awake()
     {
         vp = GetComponent<VideoPlayer>();
@@ -26,6 +27,7 @@ public class VideoEnd : MonoBehaviour
             //MR AND VP
             MR.enabled = true;
             vp.enabled = true;
+            AS.enabled = true;
         }
     }
 
