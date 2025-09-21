@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WindowBird : MonoBehaviour
 {
@@ -8,7 +9,12 @@ public class WindowBird : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        GameObject.Find("Fight Source").GetComponent<AudioSource>().Pause();
+        if(SceneManager.GetActiveScene().name.Contains("THREE"))
+        {
+
+            GameObject.Find("Fight Source").GetComponent<AudioSource>().Pause();
+
+        }
 
         Debug.Log("bird");
         AS.PlayOneShot(AC);
@@ -22,6 +28,13 @@ public class WindowBird : MonoBehaviour
 
         gameObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, -40, 0);
 
-        FindFirstObjectByType<BowlingController>().PauseAnimators();
+        //THIS SHIT IS SO ASS
+        if (SceneManager.GetActiveScene().name.Contains("THREE"))
+        {
+
+            FindFirstObjectByType<BowlingController>().PauseAnimators();
+
+        }
+
     }
 }
