@@ -43,6 +43,9 @@ public class BowlingController : MonoBehaviour
     public GameObject BallLocation;
 
 
+    public int AmountOfTimesBowled = 0;
+
+
 
 
 
@@ -82,6 +85,7 @@ public class BowlingController : MonoBehaviour
             {
                 IsTurn2 = false;
                 IsStartOfFrame = true;
+                AmountOfTimesBowled += 1;
             }
             else
             {

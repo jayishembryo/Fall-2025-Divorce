@@ -13,7 +13,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     public IEnumerator PlayAnimations()
     {
-        yield return new WaitForSeconds(Random.Range(20, 50));
-        Instantiate(Animations[Random.Range(0, Animations.Count)]/*, AnimationSpawnPoint.position, Quaternion.identity*/);
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(10, 20));
+            Instantiate(Animations[Random.Range(0, Animations.Count)]);
+        }
     }
 }
