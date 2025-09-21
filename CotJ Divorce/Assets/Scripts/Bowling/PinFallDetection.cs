@@ -12,7 +12,7 @@ public class PinFallDetection : MonoBehaviour
     private void Start()
     {
         //this'n
-        bp = GameObject.Find("BowlingPinBehaviour").GetComponent<BowlingPinBehaviour>();
+       // bp = GameObject.Find("BowlingPinBehaviour").GetComponent<BowlingPinBehaviour>();
     }
 
     // Update is called once per frame

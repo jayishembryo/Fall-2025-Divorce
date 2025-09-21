@@ -337,7 +337,6 @@ MonoBehaviour:
   - {fileID: 3249850569589560645, guid: 47aa00cb97c8fe545b6eb0b5f2ba6723, type: 3}
   - {fileID: 5553923496168328331, guid: cc0bbae26f8b4dc4f8287b807439740c, type: 3}
   - {fileID: 9160018197198936404, guid: 8f1dcbc3b0e89d644bc5336de53e3142, type: 3}
-  FlyingWindowBird: {fileID: 0}
   StartingPoint: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
   speed: 5
 --- !u!1001 &2547897376817875379
@@ -350,15 +349,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 405052823f8b5f7448bef24ea4ce02a8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 405052823f8b5f7448bef24ea4ce02a8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 405052823f8b5f7448bef24ea4ce02a8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 405052823f8b5f7448bef24ea4ce02a8, type: 3}
       propertyPath: m_LocalPosition.x
