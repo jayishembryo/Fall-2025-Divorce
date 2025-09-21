@@ -25,7 +25,7 @@ AnimationClip:
     - time: 0.25
       value: {fileID: 21300000, guid: 22dd80dbd905adc4f8c2de98d56f79c1, type: 3}
     - time: 1.25
-      value: {fileID: 21300000, guid: 74cb26ffe562b2c4787dd0ed91f436de, type: 3}
+      value: {fileID: 21300000, guid: ff208cfd64503b646baf563ec760f15f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,7 +50,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: 16c26ca97360d474ebc6ef0057300168, type: 3}
     - {fileID: 21300000, guid: 22dd80dbd905adc4f8c2de98d56f79c1, type: 3}
-    - {fileID: 21300000, guid: 74cb26ffe562b2c4787dd0ed91f436de, type: 3}
+    - {fileID: 21300000, guid: ff208cfd64503b646baf563ec760f15f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -77,7 +77,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.25
-    functionName: DestroySelf
+    functionName: ActivateUnshockedTrigger
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

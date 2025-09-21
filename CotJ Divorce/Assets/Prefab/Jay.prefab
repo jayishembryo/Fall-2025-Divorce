@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7260915122143243813}
   - component: {fileID: 6246278631671479600}
   - component: {fileID: 506507474843240437}
+  - component: {fileID: -313747732588886192}
   m_Layer: 0
   m_Name: Jay
   m_TagString: Untagged
@@ -110,3 +111,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-313747732588886192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826470543178853318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb6503d0fed36a48be41f5aa7264b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
