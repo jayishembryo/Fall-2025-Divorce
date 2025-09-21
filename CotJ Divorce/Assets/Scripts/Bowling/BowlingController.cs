@@ -75,6 +75,15 @@ public class BowlingController : MonoBehaviour
         {
             Instantiate(ball, BallLocation.transform.position, Quaternion.identity);
             NeedNewBall = false;
+            if (IsTurn2)
+            {
+                IsTurn2 = false;
+                IsStartOfFrame = true;
+            }
+            else
+            {
+                IsTurn2 = true;
+            }
         }
 
 
@@ -112,11 +121,13 @@ public class BowlingController : MonoBehaviour
 
     public void StartOfFrame()
     {
-        if (NeedNewBall)
+        /*if (NeedNewBall)
         {
             Instantiate(ball, BallLocation.transform.position, Quaternion.identity);
             NeedNewBall = false;
-        }
+
+            
+        }*/
         
         
         //IsTurn2 = false;
