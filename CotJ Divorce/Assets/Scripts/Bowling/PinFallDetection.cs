@@ -31,8 +31,8 @@ public class PinFallDetection : MonoBehaviour
             {
 
                 //hi jacqueline, this is for spawning window birds
-                GameObject instantiatedObject = Instantiate(Birds[Random.Range(0, Birds.Count - 1)], StartingPoint.position, Quaternion.identity);
-                instantiatedObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, speed);
+                GameObject instantiatedObject = Instantiate(Birds[Random.Range(0, Birds.Count)], StartingPoint.position + new Vector3(Random.Range(-4, 4), Random.Range(-4, 4), 0), Quaternion.identity);
+                instantiatedObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, -speed);
 
 
                 //BowlingController.PinsHit = BowlingController.PinsHit + 1;

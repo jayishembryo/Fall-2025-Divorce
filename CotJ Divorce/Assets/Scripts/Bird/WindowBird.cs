@@ -6,7 +6,8 @@ public class WindowBird : MonoBehaviour
     public AudioClip AC;
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("bird");
         AS.PlayOneShot(AC);
-        gameObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, -5, 0);
+        gameObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, -40, 0);
     }
 }
