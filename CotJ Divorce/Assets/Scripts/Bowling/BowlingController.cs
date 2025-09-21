@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BowlingController : MonoBehaviour
@@ -15,12 +17,6 @@ public class BowlingController : MonoBehaviour
 
     public Animator JaqAnimator;
     public Animator JayAnimator;
-
-    public Vector3 JaqPos;
-    public Vector3 JayPos;
-
-    [SerializeField] GameObject shockedJaq;
-    [SerializeField] GameObject shockedJay;
 
     public bool IsTurn2;
     public bool IsStartOfFrame;
@@ -42,6 +38,8 @@ public class BowlingController : MonoBehaviour
 
     public GameObject BallLocation;
 
+    int timer = 0;
+
 
 
 
@@ -61,15 +59,20 @@ public class BowlingController : MonoBehaviour
         PinsHit = 0;
         IsStartOfFrame = true;
 
-        //JaqPos = JaqAnimator.transform.position;
-        //JayPos = JayAnimator.transform.position;
+        if(SceneManager.GetActiveScene().name.Contains("THREE"))
+        {
+
+            StartCoroutine(EndTheGame());
+            Debug.Log("yayyyy");
+
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (IsStartOfFrame)
+        if (IsStartOfFrame)
         {
             StartOfFrame();
         }
@@ -87,7 +90,36 @@ public class BowlingController : MonoBehaviour
             {
                 IsTurn2 = true;
             }
+
         }
+    }
+
+        public IEnumerator EndTheGame()
+        {
+
+            while (timer < 245)
+            {
+
+                if(!GameObject.Find("Fight Source").GetComponent<AudioSource>().isPlaying)
+                {
+
+                    yield return new WaitForSeconds(1);
+
+                }
+
+                timer += 1;
+                Debug.Log("timer is " + timer);
+
+                if (timer >= 245)
+                {
+
+                    SceneManager.LoadScene(3);
+
+                }
+
+                yield return new WaitForSeconds(1);
+
+            }
 
 
         //&& bbb.IsBallOut
@@ -111,14 +143,8 @@ public class BowlingController : MonoBehaviour
     public void PauseAnimators()
     {
 
-        //JaqAnimator.speed = 0;
-        //JayAnimator.speed = 0;
-
-        //JaqAnimator.transform.position = new Vector3(10000, 10000, 10000);
-        //JayAnimator.transform.position = new Vector3(10000, 10000, 10000);
-
-        //Instantiate(shockedJaq, JaqPos, Quaternion.identity);
-        //Instantiate(shockedJay, JayPos, Quaternion.identity);
+        JaqAnimator.SetTrigger("Shocked");
+        JayAnimator.SetTrigger("Shocked");
 
     }
 

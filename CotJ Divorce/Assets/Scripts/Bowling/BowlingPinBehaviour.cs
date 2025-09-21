@@ -33,15 +33,6 @@ public class BowlingPinBehaviour : MonoBehaviour
             {
                 BowlingController.PinsHit = BowlingController.PinsHit + 1;
                 Debug.Log(BowlingController.PinsHit);
-             
-
-                glassSource.Play();
-
-                int randomClip = Random.Range(0, birdSounds.Count);
-                playerSource.clip = birdSounds[randomClip];
-                playerSource.Play();
-
-                FindFirstObjectByType<BowlingController>().PauseAnimators();
 
                 HitCounted = true;
             }
