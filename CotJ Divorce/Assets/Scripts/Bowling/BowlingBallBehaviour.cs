@@ -7,11 +7,13 @@ public class BowlingBallBehaviour : MonoBehaviour
 
     public Rigidbody rb;
     public float speed = 1;
+    public float MovementSpeed = 5;
 
   
 
     public bool IsBallThrown;
     public bool IsBallOut;
+    public bool CanThrow;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,6 +24,8 @@ public class BowlingBallBehaviour : MonoBehaviour
         bc = FindFirstObjectByType<BowlingController>();
         IsBallThrown = false;
         IsBallOut = false;
+        CanThrow = true;
+        
     }
 
     // Update is called once per frame
@@ -29,12 +33,19 @@ public class BowlingBallBehaviour : MonoBehaviour
     {
         
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (CanThrow)
         {
-            IsBallThrown = true;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                IsBallThrown = true;
+                CanThrow = false;
+            }
         }
+        
 
         Bowl();
+
+        PlayerMove();
     }
 
     public void Bowl()
@@ -69,6 +80,18 @@ public class BowlingBallBehaviour : MonoBehaviour
         }*/
     }
 
+    void PlayerMove()
+    {
+        Debug.Log("move");
+        float xMove = Input.GetAxis("Horizontal");
+        Debug.Log(xMove);
+        Vector3 movement = new Vector3(xMove, 0f);
+
+        movement *= Time.deltaTime * MovementSpeed;
+
+        transform.position += movement;
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
        
@@ -79,6 +102,7 @@ public class BowlingBallBehaviour : MonoBehaviour
             Debug.Log("is ball out");
             bc.NeedNewBall = true;
             Debug.Log("Need new ball");
+            CanThrow = true;
             /*if (!bc.IsTurn2)
             {
                 bc.IsTurn2 = true;

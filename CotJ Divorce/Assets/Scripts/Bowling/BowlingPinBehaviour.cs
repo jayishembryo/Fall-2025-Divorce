@@ -18,6 +18,7 @@ public class BowlingPinBehaviour : MonoBehaviour
     void Start()
     {
         bc = FindFirstObjectByType<BowlingController>();
+        bbb = FindFirstObjectByType<BowlingBallBehaviour>();
         //bc = GameObject.Find("BowlingController").GetComponent<BowlingController>();
         //  bbb = GameObject.Find("BowlingBallBehaviour").GetComponent<BowlingBallBehaviour>();
         Hit = false;
@@ -37,6 +38,11 @@ public class BowlingPinBehaviour : MonoBehaviour
                 HitCounted = true;
             }
 
+            if(bbb.IsBallOut)
+            {
+                Debug.Log("This pin should be deleted");
+                Destroy(this.gameObject);
+            }
             
 
         }
