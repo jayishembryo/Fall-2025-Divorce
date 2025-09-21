@@ -326,6 +326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PinFallBox: {fileID: 7442229131615225062}
   bp: {fileID: 1127450457985238688}
+  FlyingWindowBird: {fileID: 0}
+  StartingPoint: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
 --- !u!1001 &2547897376817875379
 PrefabInstance:
   m_ObjectHideFlags: 0

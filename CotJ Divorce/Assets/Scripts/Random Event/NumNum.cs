@@ -35,8 +35,6 @@ public class NumNum : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(SecondsToWaitSmall, SecondsToWaitBig));
             GameObject instantiatedObject = Instantiate(NumNumImage, transform.position, Quaternion.identity);
             instantiatedObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(speed, 0, 0);
-
-            yield return new WaitForSeconds(.1f);
             AS.PlayOneShot(NumNumVoiceLine);
 
         }

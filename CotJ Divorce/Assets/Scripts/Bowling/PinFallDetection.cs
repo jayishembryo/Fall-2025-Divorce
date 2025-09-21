@@ -4,6 +4,9 @@ public class PinFallDetection : MonoBehaviour
 {
     public GameObject PinFallBox;
     public BowlingPinBehaviour bp;
+    public GameObject FlyingWindowBird;
+    public Transform StartingPoint;
+    public float speed = 5;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,9 +33,12 @@ public class PinFallDetection : MonoBehaviour
                 //Debug.Log(BowlingController.PinsHit);
                 this.gameObject.SetActive(false);
                 bp.Hit = true;
-               
-               
-                   
+
+                //hi jacqueline, this is for spawning window birds
+                GameObject instantiatedObject = Instantiate(FlyingWindowBird, StartingPoint.position, Quaternion.identity);
+                instantiatedObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, speed, 0);
+
+
 
             }
             
