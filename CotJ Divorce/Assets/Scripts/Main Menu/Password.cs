@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Password : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Password : MonoBehaviour
 
     [SerializeField] GameObject realCredits;
 
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioClip evilTheme;
+
     public void EnterPassword()
     {
 
@@ -18,6 +22,16 @@ public class Password : MonoBehaviour
 
             realCredits.SetActive(true);
             this.gameObject.SetActive(false);
+
+            musicSource.clip = evilTheme;
+            musicSource.Play();
+            musicSource.volume = 1;
+
+        }
+        else if (PasswordField.text != CorrectPassword)
+        {
+
+            SceneManager.LoadScene(4);
 
         }
 
