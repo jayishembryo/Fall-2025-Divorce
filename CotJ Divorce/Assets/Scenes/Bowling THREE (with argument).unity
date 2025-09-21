@@ -139,6 +139,7 @@ MonoBehaviour:
   rb: {fileID: 3600196}
   speed: 150
   IsBallThrown: 0
+  IsBallOut: 0
 --- !u!54 &3600196 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 5082143847661358568, guid: 3e62622f79d939847bf8520bd81b1b89, type: 3}
@@ -3294,12 +3295,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballClone: {fileID: 3600194}
   ball: {fileID: 3600194}
+  pin: {fileID: 0}
   JaqAnimator: {fileID: 1239364475}
   JayAnimator: {fileID: 287938795}
   JaqPos: {x: 0, y: 0, z: 0}
   JayPos: {x: 0, y: 0, z: 0}
   shockedJaq: {fileID: 14864689123287360, guid: 8e7b18dde59b50143bbd44145d8cd7ca, type: 3}
   shockedJay: {fileID: 8738743802523698873, guid: b4d28b2520bfffd4fa5c3a94a9a5d111, type: 3}
+  IsTurn2: 0
+  IsStartOfFrame: 0
+  IsEndOfFrame: 0
+  NeedNewBall: 0
+  Pin1Location: {fileID: 0}
+  Pin2Location: {fileID: 0}
+  Pin3Location: {fileID: 0}
+  Pin4Location: {fileID: 0}
+  Pin5Location: {fileID: 0}
+  Pin6Location: {fileID: 0}
+  Pin7Location: {fileID: 0}
+  Pin8Location: {fileID: 0}
+  Pin9Location: {fileID: 0}
+  Pin10Location: {fileID: 0}
+  BallLocation: {fileID: 0}
 --- !u!4 &1284911861
 Transform:
   m_ObjectHideFlags: 0
@@ -4993,6 +5010,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4e3d84258988bd46800eb0806907a88, type: 3}
+--- !u!1001 &5805568011011488727
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 53.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147509570304510755, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+      propertyPath: m_Name
+      value: BirdFlyingPoint
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
 --- !u!1001 &8421631847299760899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5118,3 +5192,4 @@ SceneRoots:
   - {fileID: 1299702368}
   - {fileID: 667459793}
   - {fileID: 731069292}
+  - {fileID: 5805568011011488727}

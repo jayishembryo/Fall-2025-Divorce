@@ -326,8 +326,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PinFallBox: {fileID: 7442229131615225062}
   bp: {fileID: 1127450457985238688}
+  Birds:
+  - {fileID: 1899241741419227862, guid: 7825c42a6a9bb5648bf5ffd18852566c, type: 3}
+  - {fileID: 6401780038831795187, guid: 48c84a6398e69cc43bb89417a3f678f4, type: 3}
+  - {fileID: 7205531649732461819, guid: 4d31ef5dbfc130847824c811ffb23655, type: 3}
+  - {fileID: 5104357842947067454, guid: 845b8b2935d9d88469116b267c7ed406, type: 3}
+  - {fileID: 6248540311628659583, guid: 1e14846d81b1ce94f8a47b48211b8796, type: 3}
+  - {fileID: 8274799498962527362, guid: 99bb341f36c26974cbdebade5ae66f8f, type: 3}
+  - {fileID: 7901386634695105633, guid: abe29a513a673ec4e80d286af4f22740, type: 3}
+  - {fileID: 3249850569589560645, guid: 47aa00cb97c8fe545b6eb0b5f2ba6723, type: 3}
+  - {fileID: 5553923496168328331, guid: cc0bbae26f8b4dc4f8287b807439740c, type: 3}
+  - {fileID: 9160018197198936404, guid: 8f1dcbc3b0e89d644bc5336de53e3142, type: 3}
   FlyingWindowBird: {fileID: 0}
   StartingPoint: {fileID: 3101708846948177462, guid: 56513357da898c4449d8ac4dd1225808, type: 3}
+  speed: 5
 --- !u!1001 &2547897376817875379
 PrefabInstance:
   m_ObjectHideFlags: 0
