@@ -151,5 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7360036723446140818}
   speed: 400
+  MovementSpeed: 5
   IsBallThrown: 0
   IsBallOut: 0
+  CanThrow: 0
