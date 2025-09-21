@@ -30,6 +30,15 @@ public class PinFallDetection : MonoBehaviour
             if (!bp.Hit)
             {
 
+                //BowlingController.PinsHit = BowlingController.PinsHit + 1;
+                //Debug.Log(BowlingController.PinsHit);
+                bp.Hit = true;
+                // maybe put hit counted false here
+                Debug.Log("The pin should be invisible");
+                //turning the hit box off so it doesn't double count if the pins rolls
+                this.gameObject.SetActive(false);
+                // sky this line might break your code
+
                 //hi jacqueline, this is for spawning window birds
                 GameObject instantiatedObject = Instantiate(Birds[Random.Range(0, Birds.Count - 1)], StartingPoint.position, Quaternion.identity);
                 instantiatedObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, speed);
@@ -37,8 +46,12 @@ public class PinFallDetection : MonoBehaviour
 
                 //BowlingController.PinsHit = BowlingController.PinsHit + 1;
                 //Debug.Log(BowlingController.PinsHit);
+               /* bp.Hit = true;
+                // maybe put hit counted false here
+                Debug.Log("The pin should be invisible");
                 this.gameObject.SetActive(false);
-                bp.Hit = true;
+*/
+
 
 
 

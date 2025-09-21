@@ -99,14 +99,7 @@ public class BowlingController : MonoBehaviour
         }*/
     }
 
-    public void BowlAgain()
-    {
-        /*if (bbb.isballout)
-        {
-            ballclone = instantiate(ball, transform.position, transform.rotation);
-            bbb.isballout = false;
-        }*/
-    }
+   
 
     public void PauseAnimators()
     {
@@ -135,7 +128,7 @@ public class BowlingController : MonoBehaviour
         
         //IsTurn2 = false;
 
-
+        // Puts all the pins on the alley at the start of the frame
         Instantiate(pin, Pin1Location.transform.position, Quaternion.identity);
         Instantiate(pin, Pin2Location.transform.position, Quaternion.identity);
         Instantiate(pin, Pin3Location.transform.position, Quaternion.identity);
