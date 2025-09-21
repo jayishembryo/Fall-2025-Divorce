@@ -12,6 +12,8 @@ public class DestroyAnimation : MonoBehaviour
         FindFirstObjectByType<BowlingController>().JaqAnimator.transform.position = FindFirstObjectByType<BowlingController>().JaqPos;
         FindFirstObjectByType<BowlingController>().JayAnimator.transform.position = FindFirstObjectByType<BowlingController>().JayPos;
 
+        GameObject.Find("Fight Source").GetComponent<AudioSource>().UnPause();
+
         Destroy(this);
 
     }
