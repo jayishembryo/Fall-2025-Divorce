@@ -49,3 +49,4 @@ MonoBehaviour:
   SecondsToWaitBig: 30
   BowlingOccurred: 1
   speed: 5
+  GubGubVoiceLine: {fileID: 8300000, guid: 8fd17a0cc5fdf7a4bbfa43d5c0dcc81c, type: 3}
