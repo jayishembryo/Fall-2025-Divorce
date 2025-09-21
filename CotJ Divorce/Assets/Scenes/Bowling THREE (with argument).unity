@@ -1181,7 +1181,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 50
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2906,6 +2906,7 @@ MonoBehaviour:
   Pin9Location: {fileID: 825235987}
   Pin10Location: {fileID: 1222765266}
   BallLocation: {fileID: 560223967}
+  AmountOfTimesBowled: 0
 --- !u!4 &1284911861
 Transform:
   m_ObjectHideFlags: 0
