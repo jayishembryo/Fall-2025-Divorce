@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,7 @@ public class MainMenu : MonoBehaviour
 {
 
     [SerializeField] GameObject fakeCredits;
+    [SerializeField] List<AudioClip> playTheGameSounds = new List<AudioClip>();
 
     public void StartGame()
     {
@@ -24,6 +26,14 @@ public class MainMenu : MonoBehaviour
     {
 
         Application.Quit();
+
+    }
+
+    public void OnPlayButtonHover()
+    {
+
+        int randomClip = Random.Range(0, playTheGameSounds.Count);
+
 
     }
 
