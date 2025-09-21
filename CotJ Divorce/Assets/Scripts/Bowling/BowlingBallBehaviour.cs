@@ -3,6 +3,7 @@ using UnityEngine;
 public class BowlingBallBehaviour : MonoBehaviour
 {
     private BowlingPinBehaviour bp;
+    private BowlingController bc;
 
     public Rigidbody rb;
     public float speed = 1;
@@ -10,13 +11,15 @@ public class BowlingBallBehaviour : MonoBehaviour
   
 
     public bool IsBallThrown;
-    public static bool IsBallOut;
+    public bool IsBallOut;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      //  bp = GameObject.Find("BowlingPinBehaviour").GetComponent<BowlingPinBehaviour>();
+        //  bp = GameObject.Find("BowlingPinBehaviour").GetComponent<BowlingPinBehaviour>();
+        //bc = GameObject.Find("BowlingController").GetComponent<BowlingController>();
+        bc = FindFirstObjectByType<BowlingController>();
         IsBallThrown = false;
         IsBallOut = false;
     }
@@ -42,6 +45,13 @@ public class BowlingBallBehaviour : MonoBehaviour
             rb.AddForce(transform.forward * speed, ForceMode.Impulse);
             Debug.Log("Throw the ball");
             IsBallThrown = false;
+
+            if(!bc.IsTurn2 && IsBallOut)
+            {
+                bc.IsTurn2 = true;
+                Debug.Log("Is Turn 2");
+            }
+           
         }
         else
         {
@@ -64,7 +74,17 @@ public class BowlingBallBehaviour : MonoBehaviour
        
         if (collision.gameObject.tag == "EndOfTheLine")
         {
+
             IsBallOut = true;
+            Debug.Log("is ball out");
+            bc.NeedNewBall = true;
+            Debug.Log("Need new ball");
+            /*if (!bc.IsTurn2)
+            {
+                bc.IsTurn2 = true;
+                Debug.Log("IsTurn2 " + bc.IsTurn2);
+            }*/
+            Debug.Log("Ball Deleted");
             Destroy(this.gameObject);
         }
 

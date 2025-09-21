@@ -11,6 +11,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] AudioClip quitClip;
     [SerializeField] List<AudioClip> playTheGameSounds = new List<AudioClip>();
 
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioClip mainTheme;
+
     public void StartGame()
     {
 
@@ -46,6 +49,15 @@ public class MainMenu : MonoBehaviour
 
         audioSource.clip = quitClip;
         audioSource.Play();
+
+    }
+
+    public void SwapToMainTheme()
+    {
+
+        musicSource.clip = mainTheme;
+        musicSource.Play();
+        musicSource.volume = 0.25f;
 
     }
 

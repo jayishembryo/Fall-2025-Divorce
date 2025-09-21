@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 113380667705010630}
   - component: {fileID: 7873231008386687474}
   - component: {fileID: 5082143847661358568}
+  - component: {fileID: -2490494357150053321}
   m_Layer: 0
   m_Name: Bowling Ball
   m_TagString: ball
@@ -136,3 +137,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2490494357150053321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157681502808211503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae364c7070b9ab8438945987267a080d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5082143847661358568}
+  speed: 1
+  IsBallThrown: 0
+  IsBallOut: 0

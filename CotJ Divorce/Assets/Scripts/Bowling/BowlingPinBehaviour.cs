@@ -17,7 +17,8 @@ public class BowlingPinBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // bc = GameObject.Find("BowlingController").GetComponent<BowlingController>();
+        bc = FindFirstObjectByType<BowlingController>();
+        //bc = GameObject.Find("BowlingController").GetComponent<BowlingController>();
         //  bbb = GameObject.Find("BowlingBallBehaviour").GetComponent<BowlingBallBehaviour>();
         Hit = false;
         HitCounted = false;
@@ -45,6 +46,13 @@ public class BowlingPinBehaviour : MonoBehaviour
                 HitCounted = true;
             }
 
+            
+
+        }
+
+        if (bc.IsStartOfFrame)
+        {
+            Destroy(this.gameObject);
         }
 
     }
