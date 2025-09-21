@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WindowBird : MonoBehaviour
 {
@@ -7,6 +8,13 @@ public class WindowBird : MonoBehaviour
     public AudioClip AC;
     private void OnCollisionEnter(Collision collision)
     {
+
+        if(!SceneManager.GetActiveScene().name.Contains("THREE"))
+        {
+
+            return;
+
+        }
 
         GameObject.Find("Fight Source").GetComponent<AudioSource>().Pause();
 
